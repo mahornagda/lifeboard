@@ -4,3 +4,4 @@ node_modules/
 .shots/
 make_seed.py
 .DS_Store
+data/status.json

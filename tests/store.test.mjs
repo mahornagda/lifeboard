@@ -6,13 +6,13 @@ const base = () => {
   let s = S.emptyState();
   s = S.addTheme(s, { name: 'Finance', id: 'fin' });
   s = S.addTheme(s, { name: 'Tech', id: 'tech' });
-  s = S.addTheme(s, { name: 'Morning', kind: 'daily', id: 'mor' });
-  s = S.addTheme(s, { name: 'Push-ups', kind: 'progress', id: 'push' });
+  s = S.addTheme(s, { name: 'Morning', id: 'mor' });
+  s = S.addTheme(s, { name: 'Push-ups', id: 'push' });
   s = S.addTask(s, { themeId: 'fin', title: 'Rent', id: 'a' });
   s = S.addTask(s, { themeId: 'fin', title: 'SIP', id: 'b' });
   s = S.addTask(s, { themeId: 'tech', title: 'GDrive', id: 'c' });
-  s = S.addTask(s, { themeId: 'mor', title: 'Brush', id: 'm1' });
-  s = S.addTask(s, { themeId: 'push', title: 'Max push-ups', id: 'p1' });
+  s = S.addTask(s, { themeId: 'mor', title: 'Brush', id: 'm1', kind: 'daily' });
+  s = S.addTask(s, { themeId: 'push', title: 'Max push-ups', id: 'p1', kind: 'progress' });
   return s;
 };
 
@@ -97,7 +97,7 @@ test('logs validate numbers and sort by date', () => {
 test('parseQuick reads theme prefix, flags and dates', () => {
   const s = base();
   const r = S.parseQuick(s, 'fin: pay rent ! * @tomorrow', '2026-10-01');
-  assert.deepEqual(r, { themeId: 'fin', title: 'pay rent', urgent: true, important: true, due: '2026-10-02' });
+  assert.deepEqual(r, { themeId: 'fin', title: 'pay rent', urgent: true, important: true, due: '2026-10-02', kind: 'task' });
   const fri = S.parseQuick(s, 'call bank @fri', '2026-10-01'); // Thu → Fri
   assert.equal(fri.due, '2026-10-02'); assert.equal(fri.themeId, null);
   const same = S.parseQuick(s, 'x @thu', '2026-10-01'); // same weekday → next week
@@ -118,4 +118,46 @@ test('no-op updates return the same state (no save, no undo step)', () => {
   assert.equal(S.updateTask(s, 'a', { title: 'Rent' }), s);
   assert.equal(S.updateTheme(s, 'fin', { name: 'Finance' }), s);
   assert.notEqual(S.updateTask(s, 'a', { title: 'Rent!' }), s);
+});
+
+test('type lives on the item: one theme can mix to-dos, daily and tracked', () => {
+  let s = S.addTask(base(), { themeId: 'fin', title: 'Check balance', id: 'd', kind: 'daily' });
+  s = S.addTask(s, { themeId: 'fin', title: 'Net worth', id: 'n', kind: 'progress' });
+  const kinds = s.tasks.filter((t) => t.themeId === 'fin').map((t) => t.kind);
+  assert.deepEqual(kinds, ['task', 'task', 'daily', 'progress']);
+  assert.equal(S.addTask(s, { themeId: 'fin', title: 'x', id: 'z', kind: 'weird' }).tasks.find((t) => t.id === 'z').kind, 'task');
+});
+
+test('changing an item type keeps its history', () => {
+  let s = S.toggleCheck(base(), '2026-10-01', 'm1');
+  s = S.updateTask(s, 'm1', { kind: 'task' });
+  s = S.updateTask(s, 'm1', { kind: 'daily' });
+  assert.equal(S.isChecked(s, '2026-10-01', 'm1'), true);
+});
+
+test('validate migrates old boards: item type comes from the old theme kind', () => {
+  const v = S.validate({
+    themes: [{ id: 'a', name: 'A', kind: 'list', color: 'sun' }, { id: 'b', name: 'B', kind: 'daily', color: 'sky' }, { id: 'c', name: 'C', kind: 'progress', color: 'teal' }],
+    tasks: [{ id: '1', themeId: 'a', title: 'x' }, { id: '2', themeId: 'b', title: 'y' }, { id: '3', themeId: 'c', title: 'z' }, { id: '4', themeId: 'b', title: 'w', kind: 'task' }],
+    logs: [], checks: {},
+  });
+  assert.deepEqual(v.tasks.map((t) => t.kind), ['task', 'daily', 'progress', 'task']);
+  assert.deepEqual(v.wishlist, []);
+});
+
+test('parseQuick reads +daily / +track', () => {
+  const s = base();
+  assert.equal(S.parseQuick(s, 'fin: check balance +daily', '2026-10-01').kind, 'daily');
+  const t = S.parseQuick(s, 'plank +track', '2026-10-01');
+  assert.equal(t.kind, 'progress'); assert.equal(t.title, 'plank');
+});
+
+test('wishlist: add, tick, rename, delete', () => {
+  let s = S.addWish(base(), { title: 'Link to email', id: 'w1' });
+  assert.equal(S.addWish(s, { title: ' ' }), s);
+  s = S.toggleWish(s, 'w1');
+  assert.equal(s.wishlist[0].done, true);
+  s = S.updateWish(s, 'w1', { title: 'Link to Gmail' });
+  assert.equal(s.wishlist[0].title, 'Link to Gmail');
+  assert.equal(S.deleteWish(s, 'w1').wishlist.length, 0);
 });

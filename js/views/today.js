@@ -15,8 +15,8 @@ export function renderToday(app) {
 }
 
 function routineCol(app) {
-  const themes = app.visibleThemes('daily');
-  const items = app.s.tasks.filter((t) => themes.some((th) => th.id === t.themeId));
+  const items = app.itemsOf('daily');
+  const themes = app.visibleThemes().filter((th) => items.some((t) => t.themeId === th.id));
   const done = items.filter((t) => S.isChecked(app.s, app.today, t.id)).length;
   const tiles = themes.map((th) => {
     const mine = items.filter((t) => t.themeId === th.id);
@@ -34,7 +34,7 @@ function routineCol(app) {
   });
   return h('section', { class: 'box col' },
     h('div', { class: 'col-head' }, h('h2', null, 'Routine'), items.length ? ring(done / items.length, `${done}/${items.length}`) : null),
-    tiles.length ? tiles : h('p', { class: 'box-empty' }, 'Make a theme of kind “Daily” (e.g. Morning) and its items show here as tiles.'));
+    tiles.length ? tiles : h('p', { class: 'box-empty' }, 'Items with type “Daily” show here as tiles. Add one with “+daily”, e.g. “self care: stretch +daily”.'));
 }
 
 // Hot = in progress, urgent, or due by today. Sorted: late first, then urgent, then due date.
@@ -42,7 +42,7 @@ function hotCol(app) {
   const hot = app.visibleTasks({ includeDone: false })
     .filter((t) => t.status === 'doing' || t.urgent || (t.due && t.due <= app.today))
     .sort((a, b) => rank(app, a) - rank(app, b) || (a.due || '9').localeCompare(b.due || '9'));
-  const doneToday = app.s.tasks.filter((t) => t.status === 'done' && t.doneAt && S.dateKey(new Date(t.doneAt)) === app.today);
+  const doneToday = app.visibleTasks().filter((t) => t.status === 'done' && t.doneAt && S.dateKey(new Date(t.doneAt)) === app.today);
   return h('section', { class: 'box col' },
     h('div', { class: 'col-head' }, h('h2', null, 'Hot list'), h('span', { class: 'muted small' }, 'doing · urgent · due')),
     hot.length ? hot.map((t) => taskRow(app, t, { showTheme: true }))
@@ -52,8 +52,7 @@ function hotCol(app) {
 const rank = (app, t) => (t.due && t.due < app.today ? 0 : t.urgent ? 1 : t.status === 'doing' ? 2 : 3);
 
 function trainingCol(app) {
-  const themes = app.visibleThemes('progress');
-  const items = app.s.tasks.filter((t) => themes.some((th) => th.id === t.themeId));
+  const items = app.itemsOf('progress');
   return h('section', { class: 'box col' },
     h('div', { class: 'col-head' }, h('h2', null, 'Train'), h('button', { class: 'linkish small', onclick: () => app.set({ view: 'training' }) }, 'all charts →')),
     items.length ? items.map((t) => {
@@ -61,7 +60,7 @@ function trainingCol(app) {
       const logs = S.logsFor(app.s, t.id);
       const todays = logs.filter((l) => l.date === app.today);
       const best = logs.length ? Math.max(...logs.map((l) => l.value)) : null;
-      const input = h('input', { type: 'number', inputmode: 'decimal', class: 'log-input', placeholder: 'reps', 'aria-label': `Log ${t.title}` });
+      const input = h('input', { type: 'number', inputmode: 'decimal', class: 'log-input', placeholder: t.unit || 'reps', 'aria-label': `Log ${t.title}` });
       const log = () => { if (input.value !== '') app.do(S.addLog, { taskId: t.id, value: input.value }); };
       input.addEventListener('keydown', (e) => { e.stopPropagation(); if (e.key === 'Enter') log(); });
       const row = h('div', { class: 'train-row' },
@@ -71,6 +70,6 @@ function trainingCol(app) {
             best != null ? h('span', { class: 'mono small muted' }, `best ${best}`) : null)),
         input, h('button', { class: 'btn btn-sm', onclick: log }, icon('plus', 14)));
       return setVars(row, themeVars(th));
-    }) : h('p', { class: 'box-empty' }, 'Make a theme of kind “Progress” (e.g. Push-ups) to log numbers here.'));
+    }) : h('p', { class: 'box-empty' }, 'Items with type “Tracked” show here. Add one with “+track”, e.g. “fitness: plank +track”.'));
 }
 

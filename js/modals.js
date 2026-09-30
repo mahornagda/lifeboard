@@ -17,8 +17,7 @@ function modal(title, body, { wide = false } = {}) {
 export function openThemeEditor(app, theme) {
   const isNew = !theme;
   let color = theme?.color || S.COLOR_KEYS[app.s.themes.length % S.COLOR_KEYS.length];
-  let kind = theme?.kind || 'list';
-  const name = h('input', { value: theme?.name || '', placeholder: 'e.g. Finance, Health, a trip', 'aria-label': 'Theme name' });
+  const name = h('input', { value: theme?.name || '', placeholder: 'e.g. Finances, Errands, Self care', 'aria-label': 'Theme name' });
   const used = new Set(app.s.themes.filter((t) => t.id !== theme?.id).map((t) => t.color));
 
   const swatches = h('div', { class: 'swatches' });
@@ -29,18 +28,11 @@ export function openThemeEditor(app, theme) {
   }, k === color ? '✓' : '')));
   paintSwatches();
 
-  const kinds = h('div', { class: 'kind-pick' });
-  const DESC = { list: 'One-off to-dos you tick off once.', daily: 'Things you do every day. Builds streaks.', progress: 'A number you log over time, with a chart.' };
-  const paintKinds = () => kinds.replaceChildren(...Object.entries(S.KINDS).map(([k, l]) => h('button', {
-    class: `kind-btn ${k === kind ? 'on' : ''}`, onclick: () => { kind = k; paintKinds(); },
-  }, h('b', null, l), h('span', null, DESC[k]))));
-  paintKinds();
-
   const save = () => {
     const n = name.value.trim();
     if (!n) { name.focus(); name.classList.add('shake'); return; }
-    if (isNew) app.do(S.addTheme, { name: n, kind, color });
-    else app.do(S.updateTheme, theme.id, { name: n, kind, color });
+    if (isNew) app.do(S.addTheme, { name: n, color });
+    else app.do(S.updateTheme, theme.id, { name: n, color });
     close();
   };
   name.addEventListener('keydown', (e) => { if (e.key === 'Enter') save(); });
@@ -48,7 +40,7 @@ export function openThemeEditor(app, theme) {
   const body = h('div', { class: 'form' },
     h('label', null, 'Name'), name,
     h('label', null, 'Colour ', h('span', { class: 'muted small' }, '— one per theme; it follows the theme everywhere')), swatches,
-    h('label', null, 'Kind'), kinds,
+    h('p', { class: 'muted small' }, 'A theme can hold To-dos, Daily habits and Tracked numbers together — pick the type per item.'),
     h('div', { class: 'row gap end' },
       !isNew ? h('button', { class: 'btn btn-danger', onclick: () => {
         const n = app.s.tasks.filter((t) => t.themeId === theme.id).length;
@@ -111,11 +103,11 @@ function download(state) {
 
 export function openHelp() {
   const rows = [
-    ['n / ⌘K', 'Quick add a task'], ['/', 'Search'], ['1 – 8', 'Switch view'], ['t', 'New theme'],
+    ['n / ⌘K', 'Quick add a task'], ['/', 'Search'], ['1 – 9', 'Switch view'], ['t', 'New theme'],
     ['[', 'Hide / show sidebar'], [']', 'Hide / show detail pane'], ['\\', 'Hide / show today strip'], ['h', 'Hide / show done tasks'],
     ['x or space', 'Tick the selected task'], ['Delete', 'Delete the selected task'], ['⌘Z / ⇧⌘Z', 'Undo / redo'], ['Esc', 'Close / deselect'],
   ];
-  const syntax = [['finance: …', 'put it in the theme starting “finance”'], ['!', 'urgent'], ['*', 'important'], ['@fri  @tomorrow  @2026-10-20', 'due date']];
+  const syntax = [['finance: …', 'put it in the theme starting “finance”'], ['!', 'urgent'], ['*', 'important'], ['+daily', 'make it a daily habit'], ['+track', 'make it a tracked number'], ['@fri  @tomorrow  @2026-10-20', 'due date']];
   modal('Shortcuts', h('div', { class: 'help' },
     h('table', { class: 'table compact' }, h('tbody', null, rows.map(([k, d]) => h('tr', null, h('td', null, h('kbd', null, k)), h('td', null, d))))),
     h('h3', null, 'Quick-add language'),

@@ -5,6 +5,7 @@ import { VIEWS } from './views/index.js';
 import { renderSidebar, renderTopbar, updateTopbar, renderStrip, renderDetail } from './panes.js';
 import { openThemeEditor, openSettings, openHelp } from './modals.js';
 import * as Sync from './sync.js';
+import { loadDigest } from './digest.js';
 
 const DATA_KEY = 'life.data.v1';
 const UI_KEY = 'life.ui.v1';
@@ -78,17 +79,17 @@ export const app = {
   theme(id) { return this.s.themes.find((t) => t.id === id); },
   task(id) { return this.s.tasks.find((t) => t.id === id); },
   // Themes on screen: not hidden, and matching the sidebar focus if one is set.
-  visibleThemes(kind) {
-    return this.s.themes.filter((t) => !t.hidden && (!this.ui.focus || t.id === this.ui.focus) && (!kind || t.kind === kind));
+  visibleThemes() {
+    return this.s.themes.filter((t) => !t.hidden && (!this.ui.focus || t.id === this.ui.focus));
   },
-  // Tasks on screen for one-off views: visible list themes + search.
-  visibleTasks({ includeDone = true } = {}) {
-    const ok = new Set(this.visibleThemes('list').map((t) => t.id));
-    const q = this.ui.q.trim().toLowerCase();
-    return this.s.tasks.filter((t) => ok.has(t.themeId)
-      && (includeDone || t.status !== 'done')
-      && (!q || t.title.toLowerCase().includes(q) || (t.notes || '').toLowerCase().includes(q)));
+  // Items of one type ('task' | 'daily' | 'progress') inside the visible themes, matching the search.
+  itemsOf(kind, { includeDone = true } = {}) {
+    const ok = new Set(this.visibleThemes().map((t) => t.id));
+    return this.s.tasks.filter((t) => t.kind === kind && ok.has(t.themeId)
+      && (includeDone || t.status !== 'done') && this.matches(t));
   },
+  // One-off to-dos on screen — what Kanban, Matrix, List and the hot list work with.
+  visibleTasks(opts) { return this.itemsOf('task', opts); },
   matches(task) {
     const q = this.ui.q.trim().toLowerCase();
     return !q || task.title.toLowerCase().includes(q) || (task.notes || '').toLowerCase().includes(q);
@@ -200,6 +201,8 @@ export async function boot() {
   // Tick over midnight so "today" rolls without a reload.
   setInterval(() => { if (S.dateKey() !== app.today) app.render(); }, 60_000);
   app.render();
+  loadDigest(() => app.render());
+  setInterval(() => loadDigest(() => app.render()), 30 * 60_000);
   await consumeLink();
   await Sync.pullOnBoot(app);
 }

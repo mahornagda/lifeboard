@@ -13,7 +13,7 @@ const COLS = [
 export function renderKanban(app) {
   const monthAgo = Date.now() - 30 * 864e5;
   const tasks = app.visibleTasks();
-  const firstTheme = app.visibleThemes('list')[0];
+  const firstTheme = app.visibleThemes()[0];
   return h('div', { class: 'view-pad' },
     viewHead(app, 'Kanban', 'Drag a card across to change its status. Colour = theme.'),
     h('div', { class: 'kanban' }, COLS.map((c) => {
@@ -43,8 +43,8 @@ export function quickAdd(app, text, fallbackThemeId, extra = {}) {
   const p = S.parseQuick(app.s, text, app.today);
   const themeId = p.themeId || fallbackThemeId;
   if (!p.title || !themeId) return app.toast('Pick a theme first: type “finance: pay rent”');
-  app.do(S.addTask, { themeId, title: p.title, urgent: p.urgent, important: p.important, due: p.due, ...extra });
-  app.toast(`Added to ${app.theme(themeId).name}`);
+  app.do(S.addTask, { themeId, title: p.title, kind: p.kind, urgent: p.urgent, important: p.important, due: p.due, ...extra });
+  app.toast(`Added to ${app.theme(themeId).name}${p.kind !== 'task' ? ` as ${S.KINDS[p.kind]}` : ''}`);
 }
 
 // Grid order: row 1 = important, row 2 = not important; column 1 = urgent, column 2 = not urgent.

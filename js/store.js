@@ -1,11 +1,13 @@
 // Pure data layer. Every action takes a state and returns a NEW state.
 // No DOM, no storage here — so it runs under `node --test` unchanged.
 
+// The TYPE belongs to each item, not to the theme — a theme can mix all three.
 export const KINDS = {
-  list: 'Tasks',        // one-off to-dos (Finance, Tech, Projects…)
-  daily: 'Daily',       // tick every day, builds streaks (Morning routine)
-  progress: 'Progress', // log a number over time (Push-ups, Pull-ups)
+  task: 'To-do',       // one-off: tick it off once
+  daily: 'Daily',      // tick every day, builds streaks
+  progress: 'Tracked', // log a number over time, with a chart
 };
+const OLD_THEME_KIND = { list: 'task', daily: 'daily', progress: 'progress' };
 
 export const STATUSES = ['todo', 'doing', 'done'];
 
@@ -37,17 +39,17 @@ export function addDays(key, n) {
 }
 
 export function emptyState() {
-  return { version: 1, updatedAt: 0, themes: [], tasks: [], checks: {}, logs: [], scratch: '' };
+  return { version: 2, updatedAt: 0, themes: [], tasks: [], checks: {}, logs: [], scratch: '', wishlist: [], wordSince: '' };
 }
 
 const touch = (s) => ({ ...s, updatedAt: Date.now() });
 const nextColor = (s) => COLOR_KEYS[s.themes.length % COLOR_KEYS.length];
 
 // ---------- themes ----------
-export function addTheme(s, { name, kind = 'list', color, id = uid() }) {
+export function addTheme(s, { name, color, id = uid() }) {
   const clean = String(name || '').trim();
   if (!clean) return s;
-  const theme = { id, name: clean, kind: KINDS[kind] ? kind : 'list', color: PALETTE[color] ? color : nextColor(s), collapsed: false, hidden: false };
+  const theme = { id, name: clean, color: PALETTE[color] ? color : nextColor(s), collapsed: false, hidden: false };
   return touch({ ...s, themes: [...s.themes, theme] });
 }
 
@@ -87,10 +89,11 @@ export function addTask(s, { themeId, title, id = uid(), ...rest }) {
   const clean = String(title || '').trim();
   if (!clean || !s.themes.some((t) => t.id === themeId)) return s;
   const task = {
-    id, themeId, title: clean, status: 'todo', urgent: false, important: false,
+    id, themeId, title: clean, kind: 'task', status: 'todo', urgent: false, important: false,
     due: '', notes: '', target: null, unit: 'reps', createdAt: Date.now(), doneAt: null,
     ...rest,
   };
+  if (!KINDS[task.kind]) task.kind = 'task';
   if (task.status === 'done' && !task.doneAt) task.doneAt = task.createdAt;
   return touch({ ...s, tasks: [...s.tasks, task] });
 }
@@ -180,6 +183,16 @@ export const logsFor = (s, taskId) => s.logs.filter((l) => l.taskId === taskId).
 
 export const setScratch = (s, text) => touch({ ...s, scratch: String(text) });
 
+// ---------- "things to add to the dashboard" list ----------
+export function addWish(s, { title, id = uid() }) {
+  const clean = String(title || '').trim();
+  if (!clean) return s;
+  return touch({ ...s, wishlist: [...(s.wishlist || []), { id, title: clean, done: false }] });
+}
+export const updateWish = (s, id, patch) => touch({ ...s, wishlist: s.wishlist.map((w) => (w.id === id ? { ...w, ...patch } : w)) });
+export const toggleWish = (s, id) => touch({ ...s, wishlist: s.wishlist.map((w) => (w.id === id ? { ...w, done: !w.done } : w)) });
+export const deleteWish = (s, id) => touch({ ...s, wishlist: s.wishlist.filter((w) => w.id !== id) });
+
 // ---------- quick-add parser ----------
 // "fin: pay rent ! * @fri"  → theme starting "fin", urgent, important, due next Friday.
 const DOW = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
@@ -192,7 +205,8 @@ export function parseQuick(s, text, today = dateKey()) {
     const hit = s.themes.find((t) => t.name.toLowerCase() === q) || s.themes.find((t) => t.name.toLowerCase().startsWith(q));
     if (hit) { themeId = hit.id; rest = m[2]; }
   }
-  let urgent = false; let important = false; let due = '';
+  let urgent = false; let important = false; let due = ''; let kind = 'task';
+  rest = rest.replace(/(^|\s)\+(daily|track|tracked)(?=\s|$)/gi, (_, sp, k) => { kind = k.toLowerCase() === 'daily' ? 'daily' : 'progress'; return sp; });
   rest = rest.replace(/(^|\s)@(\S+)/g, (_, sp, tok) => {
     const t = tok.toLowerCase();
     if (/^\d{4}-\d{2}-\d{2}$/.test(t)) due = t;
@@ -208,7 +222,7 @@ export function parseQuick(s, text, today = dateKey()) {
   });
   rest = rest.replace(/(^|\s)!+(?=\s|$)/g, () => { urgent = true; return ' '; });
   rest = rest.replace(/(^|\s)\*+(?=\s|$)/g, () => { important = true; return ' '; });
-  return { themeId, title: rest.replace(/\s+/g, ' ').trim(), urgent, important, due };
+  return { themeId, title: rest.replace(/\s+/g, ' ').trim(), urgent, important, due, kind };
 }
 
 // ---------- validation for imports ----------
@@ -218,10 +232,15 @@ export function validate(raw) {
   if (!Array.isArray(s.themes) || !Array.isArray(s.tasks) || !Array.isArray(s.logs) || typeof s.checks !== 'object') {
     throw new Error('File is missing themes / tasks / logs');
   }
-  const ids = new Set(s.themes.map((t) => t.id));
+  const themes = s.themes.filter((t) => t && t.id && t.name);
+  const byId = new Map(themes.map((t) => [t.id, t]));
   return {
     ...s,
-    themes: s.themes.filter((t) => t && t.id && t.name).map((t) => ({ kind: 'list', collapsed: false, hidden: false, ...t, color: PALETTE[t.color] ? t.color : 'slate' })),
-    tasks: s.tasks.filter((t) => t && t.id && ids.has(t.themeId) && t.title),
+    version: 2,
+    wishlist: Array.isArray(s.wishlist) ? s.wishlist.filter((w) => w && w.id && w.title) : [],
+    // v1 boards kept the type on the theme; move it onto each item, then drop it from the theme.
+    themes: themes.map(({ kind, ...t }) => ({ collapsed: false, hidden: false, ...t, color: PALETTE[t.color] ? t.color : 'slate' })),
+    tasks: s.tasks.filter((t) => t && t.id && byId.has(t.themeId) && t.title)
+      .map((t) => ({ ...t, kind: KINDS[t.kind] ? t.kind : OLD_THEME_KIND[byId.get(t.themeId).kind] || 'task' })),
   };
 }

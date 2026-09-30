@@ -36,6 +36,7 @@ const I = {
   habits: '<rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/>',
   training: '<path d="M3 17l5-5 4 4 9-9"/><path d="M15 7h6v6"/>',
   wins: '<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+  digest: '<rect x="4" y="3" width="16" height="18"/><path d="M8 8h8M8 12h8M8 16h5"/>',
   sidebar: '<rect x="3" y="4" width="18" height="16"/><path d="M9 4v16"/>',
   detail: '<rect x="3" y="4" width="18" height="16"/><path d="M15 4v16"/>',
   strip: '<rect x="3" y="4" width="18" height="16"/><path d="M3 9h18"/>',

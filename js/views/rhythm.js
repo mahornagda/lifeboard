@@ -7,8 +7,7 @@ import { viewHead } from './board.js';
 const WEEKS = 22;
 
 export function renderHabits(app) {
-  const themes = app.visibleThemes('daily');
-  const items = app.s.tasks.filter((t) => themes.some((th) => th.id === t.themeId));
+  const items = app.itemsOf('daily');
   // Grid ends on this week's Sunday, starts Monday WEEKS weeks back. Columns = weeks, rows = Mon..Sun.
   const [y, m, d] = app.today.split('-').map(Number);
   const dow = (new Date(y, m - 1, d).getDay() + 6) % 7; // Mon = 0
@@ -41,14 +40,13 @@ export function renderHabits(app) {
   return h('div', { class: 'view-pad' },
     viewHead(app, 'Habits', `Last ${WEEKS} weeks. Click any square to fill in a day you forgot.`),
     cards.length ? h('div', { class: 'habit-grid' }, cards)
-      : h('div', { class: 'box box-empty' }, 'No daily habits yet. Create a theme with kind “Daily”.'));
+      : h('div', { class: 'box box-empty' }, 'No daily habits yet. Add an item to any theme and set its type to “Daily” (or type “+daily” when adding).'));
 }
 
 const stat = (v, l) => h('div', { class: 'stat' }, h('b', null, String(v)), h('span', null, l));
 
 export function renderTraining(app) {
-  const themes = app.visibleThemes('progress');
-  const items = app.s.tasks.filter((t) => themes.some((th) => th.id === t.themeId));
+  const items = app.itemsOf('progress');
   const cards = items.map((t) => {
     const th = app.theme(t.themeId);
     const logs = S.logsFor(app.s, t.id);
@@ -76,11 +74,11 @@ export function renderTraining(app) {
   return h('div', { class: 'view-pad' },
     viewHead(app, 'Training', 'Log a number, watch the line climb. Set a target on the item to draw the goal line.'),
     cards.length ? h('div', { class: 'train-grid' }, cards)
-      : h('div', { class: 'box box-empty' }, 'Nothing tracked yet. Create a theme with kind “Progress”.'));
+      : h('div', { class: 'box box-empty' }, 'Nothing tracked yet. Add an item and set its type to “Tracked” (or type “+track” when adding).'));
 }
 
 export function renderWins(app) {
-  const done = app.s.tasks.filter((t) => t.status === 'done' && app.matches(t) && app.visibleThemes().some((th) => th.id === t.themeId))
+  const done = app.itemsOf('task').filter((t) => t.status === 'done')
     .sort((a, b) => (b.doneAt || 0) - (a.doneAt || 0));
   const weeks = new Map();
   for (const t of done) {
