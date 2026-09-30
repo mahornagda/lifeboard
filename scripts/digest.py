@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Builds data/digest.json for the Digest view. Runs on a schedule in GitHub Actions (stdlib only).
 
-- RBI press releases whose title contains "Directions" (name, date, link, PDF).
+- RBI press releases whose title contains "Directions" (name, date, link, PDF), last 60 days,
+  EXCLUDING the bank-specific "Directions under Section 35A…" orders.
 - Merriam-Webster word of the day (word, date, link, short definition, example).
 
 History ACCUMULATES: each run merges into the existing file, so nothing drops off when the
@@ -12,6 +13,7 @@ import http.cookiejar
 import json
 import re
 import sys
+import time
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -28,6 +30,8 @@ UA = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit
 IST = timezone(timedelta(hours=5, minutes=30))
 MONTHS = {m: i for i, m in enumerate(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], 1)}
 DIRECTIONS = re.compile(r'\bdirections\b', re.I)
+BANK_SPECIFIC = re.compile(r'section\s*35\s*a', re.I)  # supervisory orders on single co-op banks — not wanted
+RBI_WINDOW_DAYS = 60
 
 
 def clean(text):
@@ -46,7 +50,7 @@ def parse_rbi(page):
             current = f'{m.group(3)}-{MONTHS[m.group(1)]:02d}-{int(m.group(2)):02d}'
             continue
         title = clean(m.group(5))
-        if not current or not DIRECTIONS.search(title):
+        if not current or not DIRECTIONS.search(title) or BANK_SPECIFIC.search(title):
             continue
         pdf = re.search(r"href='(https://rbidocs\.rbi\.org\.in/[^']+\.PDF)'", m.group(6), re.I)
         out.append({'id': int(m.group(4)), 'title': title, 'date': current,
@@ -108,18 +112,25 @@ def main():
     old = json.loads(OUT.read_text()) if OUT.exists() else {'rbi': [], 'words': []}
     status = {'checkedAt': datetime.now(IST).isoformat(timespec='minutes'), 'errors': {}}
     now = datetime.now(IST)
-    years = [now.year - 1, now.year] if now.month == 1 or not old.get('rbi') else [now.year]
+    years = [now.year - 1, now.year] if now.month <= 2 else [now.year]  # a 60-day window can reach last year
 
     rbi, words = old.get('rbi', []), old.get('words', [])
-    try:
-        rbi = merge(rbi, fetch_rbi(years), 'id')
-    except Exception as err:  # keep yesterday's list rather than an empty one
-        status['errors']['rbi'] = str(err)
+    for attempt in (1, 2):  # RBI throws the odd 502; one retry after a pause
+        try:
+            rbi = merge(rbi, fetch_rbi(years), 'id')
+            status['errors'].pop('rbi', None)
+            break
+        except Exception as err:  # keep the last good list rather than an empty one
+            status['errors']['rbi'] = str(err)
+            if attempt == 1:
+                time.sleep(20)
     try:
         words = merge(words, fetch_words(), 'date')
     except Exception as err:
         status['errors']['words'] = str(err)
 
+    cutoff = (now - timedelta(days=RBI_WINDOW_DAYS)).strftime('%Y-%m-%d')
+    rbi = [r for r in rbi if r['date'] >= cutoff and not BANK_SPECIFIC.search(r['title'])]
     rbi.sort(key=lambda r: (r['date'], r['id']), reverse=True)
     words.sort(key=lambda w: w['date'], reverse=True)
     data = {'rbi': rbi, 'words': words[:800]}

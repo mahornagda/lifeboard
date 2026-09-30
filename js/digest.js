@@ -115,12 +115,9 @@ function flagCard(app, flag) {
 }
 
 // ---------- RBI ----------
+// Last 60 days only, and never the bank-specific "Directions under Section 35A…" orders.
+const RBI_DAYS = 60;
 const isBankSpecific = (r) => /section\s*35\s*a/i.test(r.title);
-const RBI_FILTERS = [
-  ['all', 'All', () => true],
-  ['reg', 'Regulatory', (r) => !isBankSpecific(r)],
-  ['35a', 'Bank-specific (Sec 35A)', isBankSpecific],
-];
 
 function rbiCard(app) {
   const all = (data && data.rbi) || [];
@@ -129,18 +126,15 @@ function rbiCard(app) {
     seenRbiBefore = Number(localStorage.getItem('life.rbiSeen') || maxId);
     localStorage.setItem('life.rbiSeen', String(maxId));
   }
-  const key = app.ui.rbiFilter || 'all';
-  const [, , test] = RBI_FILTERS.find(([k]) => k === key) || RBI_FILTERS[0];
+  const cutoff = S.addDays(app.today, -RBI_DAYS);
   const q = app.ui.q.trim().toLowerCase();
-  const rows = all.filter(test).filter((r) => !q || r.title.toLowerCase().includes(q));
+  const rows = all.filter((r) => r.date >= cutoff && !isBankSpecific(r) && (!q || r.title.toLowerCase().includes(q)));
   const limit = app.ui.rbiAll ? rows.length : 25;
   return h('section', { class: 'box dcard rbi-card' },
     h('div', { class: 'dcard-head' },
       h('h2', null, 'RBI press releases: “Directions”'),
       h('a', { class: 'linkish small', href: RBI_PAGE, target: '_blank', rel: 'noopener' }, 'rbi.org.in ↗')),
-    h('div', { class: 'row gap chips' }, RBI_FILTERS.map(([k, label, fn]) => h('button', {
-      class: `fchip ${k === key ? 'on' : ''}`, onclick: () => app.set({ rbiFilter: k }),
-    }, label, h('span', { class: 'count' }, all.filter(fn).length)))),
+    h('p', { class: 'small muted' }, `${rows.length} in the last ${RBI_DAYS} days · bank-specific Section 35A orders left out`),
     status && status.errors && status.errors.rbi ? h('p', { class: 'small warn' }, `Last check failed (${status.errors.rbi}); showing the last good list.`) : null,
     rows.length ? h('table', { class: 'table rbi-table' },
       h('thead', null, h('tr', null, h('th', null, 'Published'), h('th', null, 'Press release'), h('th', null, 'PDF'))),
