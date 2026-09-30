@@ -1,0 +1,6 @@
+seed.json
+seed-link.txt
+node_modules/
+.shots/
+make_seed.py
+.DS_Store
