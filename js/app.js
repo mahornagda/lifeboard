@@ -159,17 +159,30 @@ function onKey(e) {
   }
 }
 
-// First open from the private link: #seed=<base64 JSON>. The hash never reaches the server.
-function consumeSeed() {
-  const m = location.hash.match(/seed=([^&]+)/);
-  if (!m) return;
+// First open from a private link. The hash never reaches the web server.
+//   #seed=<base64url JSON>  — the whole board inside the link
+//   #gist=<id>              — a short link: board read once from a secret GitHub Gist
+async function readLinkBoard(hash) {
+  const seed = hash.match(/seed=([^&]+)/);
+  if (seed) return JSON.parse(decodeURIComponent(escape(atob(seed[1].replace(/-/g, '+').replace(/_/g, '/')))));
+  const gist = hash.match(/gist=([0-9a-f]{20,40})/i);
+  if (!gist) return null;
+  const res = await fetch(`https://api.github.com/gists/${gist[1]}`, { headers: { Accept: 'application/vnd.github+json' } });
+  if (!res.ok) throw new Error(`gist ${res.status}`);
+  const file = Object.values((await res.json()).files || {}).find((f) => f.filename.endsWith('.json'));
+  if (!file) throw new Error('no board in gist');
+  return JSON.parse(file.truncated ? await (await fetch(file.raw_url)).text() : file.content);
+}
+
+async function consumeLink() {
+  if (!/(seed|gist)=/.test(location.hash)) return;
+  const { hash } = location;
   history.replaceState(null, '', location.pathname + location.search);
   try {
-    const json = decodeURIComponent(escape(atob(m[1].replace(/-/g, '+').replace(/_/g, '/'))));
-    const seed = S.validate(JSON.parse(json));
+    const board = S.validate(await readLinkBoard(hash));
     const hasData = app.s.themes.length > 0;
     if (!hasData || confirm('Replace what is on this device with the board from this link?')) {
-      app.commit({ ...seed, updatedAt: Date.now() }, { record: hasData });
+      app.commit({ ...board, updatedAt: Date.now() }, { record: hasData });
       app.toast('Your board is loaded');
     }
   } catch { app.toast('That link’s board could not be read'); }
@@ -186,8 +199,8 @@ export async function boot() {
   document.getElementById('scrim').addEventListener('click', () => app.set({ sidebar: false, detail: false }));
   // Tick over midnight so "today" rolls without a reload.
   setInterval(() => { if (S.dateKey() !== app.today) app.render(); }, 60_000);
-  consumeSeed();
   app.render();
+  await consumeLink();
   await Sync.pullOnBoot(app);
 }
 
