@@ -52,6 +52,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-01",
+   "word": "slew",
+   "url": "https://www.merriam-webster.com/word-of-the-day/slew-2026-10-01",
+   "pronunciation": "SLOO",
+   "pos": "noun",
+   "definition": "a large number",
+   "example": "The pile of junk mail included a slew of catalogs."
+  },
+  {
    "date": "2026-09-30",
    "word": "epistemic",
    "url": "https://www.merriam-webster.com/word-of-the-day/epistemic-2026-09-30",
@@ -142,5 +151,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-01T03:34+05:30"
+ "updatedAt": "2026-10-01T11:18+05:30"
 }
