@@ -1,6 +1,13 @@
 {
  "rbi": [
   {
+   "id": 63711,
+   "title": "RBI issues Amendment Directions on ‘Simplified approval process for subsequent acquisitions of major shareholding in a banking company by mutual funds, insurance companies and pension funds’",
+   "date": "2026-10-01",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63711",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR1233BC0C5B42DB564CA7898531869857F99D.PDF"
+  },
+  {
    "id": 63636,
    "title": "RBI issues Directions on Minimum Capital Requirements for Market Risk under Basel III for Commercial Banks",
    "date": "2026-09-21",
@@ -151,5 +158,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-01T11:18+05:30"
+ "updatedAt": "2026-10-01T18:38+05:30"
 }
