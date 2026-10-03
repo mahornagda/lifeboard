@@ -59,6 +59,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-03",
+   "word": "tittle",
+   "url": "https://www.merriam-webster.com/word-of-the-day/tittle-2026-10-03",
+   "pronunciation": "TITT-ul",
+   "pos": "noun",
+   "definition": "a very small part or amount",
+   "example": "There is not a jot or tittle of evidence to support their claims."
+  },
+  {
    "date": "2026-10-02",
    "word": "heterodox",
    "url": "https://www.merriam-webster.com/word-of-the-day/heterodox-2026-10-02",
@@ -167,5 +176,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-02T15:12+05:30"
+ "updatedAt": "2026-10-03T10:45+05:30"
 }
