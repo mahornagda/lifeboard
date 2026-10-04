@@ -59,6 +59,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-04",
+   "word": "adventitious",
+   "url": "https://www.merriam-webster.com/word-of-the-day/adventitious-2026-10-04",
+   "pronunciation": "ad-ven-TISH-us",
+   "pos": "adjective",
+   "definition": "coming from an outside source, and neither inherent nor innate",
+   "example": "The house is like a museum—beautifully restored, full of period pieces, and with no adventitious elements in view."
+  },
+  {
    "date": "2026-10-03",
    "word": "tittle",
    "url": "https://www.merriam-webster.com/word-of-the-day/tittle-2026-10-03",
@@ -176,5 +185,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-03T10:45+05:30"
+ "updatedAt": "2026-10-04T11:19+05:30"
 }
