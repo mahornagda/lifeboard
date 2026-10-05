@@ -59,6 +59,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-05",
+   "word": "perseverate",
+   "url": "https://www.merriam-webster.com/word-of-the-day/perseverate-2026-10-05",
+   "pronunciation": "per-SEV-uh-rayt",
+   "pos": "verb",
+   "definition": "to intently focus one's attention on a thought or thoughts",
+   "example": "They teach that there is no use in perseverating about past regrets."
+  },
+  {
    "date": "2026-10-04",
    "word": "adventitious",
    "url": "https://www.merriam-webster.com/word-of-the-day/adventitious-2026-10-04",
@@ -185,5 +194,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-04T11:19+05:30"
+ "updatedAt": "2026-10-05T11:05+05:30"
 }
