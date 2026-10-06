@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-06",
+   "word": "regimen",
+   "url": "https://www.merriam-webster.com/word-of-the-day/regimen-2026-10-06",
+   "pronunciation": "REJ-uh-mun",
+   "pos": "noun",
+   "definition": "a plan or set of rules to make someone become or stay healthy",
+   "example": "Sherry’s personal trainer started her on a workout regimen of 30 minutes on the treadmill followed by 30 minutes of weight training."
+  },
+  {
    "date": "2026-10-05",
    "word": "perseverate",
    "url": "https://www.merriam-webster.com/word-of-the-day/perseverate-2026-10-05",
@@ -180,5 +189,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-06T03:30+05:30"
+ "updatedAt": "2026-10-06T11:47+05:30"
 }
