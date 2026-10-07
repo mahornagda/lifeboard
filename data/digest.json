@@ -1,6 +1,20 @@
 {
  "rbi": [
   {
+   "id": 63750,
+   "title": "RBI issues Amendment Directions on 'Standardised Approach for Counterparty Credit Risk (SA-CCR)’",
+   "date": "2026-10-07",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63750",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR127212B04B47E9C244E78B6AFC79942CD043.PDF"
+  },
+  {
+   "id": 63749,
+   "title": "RBI issues Directions on 'Credit Valuation Adjustment (CVA) Framework’",
+   "date": "2026-10-07",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63749",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR12719B4332B36134434E9DEC287B78D0EF45.PDF"
+  },
+  {
    "id": 63711,
    "title": "RBI issues Amendment Directions on ‘Simplified approval process for subsequent acquisitions of major shareholding in a banking company by mutual funds, insurance companies and pension funds’",
    "date": "2026-10-01",
@@ -184,5 +198,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-07T11:25+05:30"
+ "updatedAt": "2026-10-07T18:48+05:30"
 }
