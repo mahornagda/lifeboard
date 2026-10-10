@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-10",
+   "word": "Luddite",
+   "url": "https://www.merriam-webster.com/word-of-the-day/luddite-2026-10-10",
+   "pronunciation": "LUH-dyte",
+   "pos": "noun",
+   "definition": "someone opposed to technological change",
+   "example": "My friends call me a Luddite for refusing to use chat bots."
+  },
+  {
    "date": "2026-10-09",
    "word": "inscrutable",
    "url": "https://www.merriam-webster.com/word-of-the-day/inscrutable-2026-10-09",
@@ -216,5 +225,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-09T15:59+05:30"
+ "updatedAt": "2026-10-10T15:17+05:30"
 }
