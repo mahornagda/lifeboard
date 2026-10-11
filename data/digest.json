@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-11",
+   "word": "galore",
+   "url": "https://www.merriam-webster.com/word-of-the-day/galore-2026-10-11",
+   "pronunciation": "guh-LOR",
+   "pos": "adjective",
+   "definition": "in large numbers or amounts",
+   "example": "The store promises bargains galore on Black Friday."
+  },
+  {
    "date": "2026-10-10",
    "word": "Luddite",
    "url": "https://www.merriam-webster.com/word-of-the-day/luddite-2026-10-10",
@@ -225,5 +234,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-10T15:17+05:30"
+ "updatedAt": "2026-10-11T11:13+05:30"
 }
