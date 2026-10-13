@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-13",
+   "word": "abscond",
+   "url": "https://www.merriam-webster.com/word-of-the-day/abscond-2026-10-13",
+   "pronunciation": "ab-SKAHND",
+   "pos": "verb",
+   "definition": "to secretly leave a place and go into hiding",
+   "example": "It was mid-semester, when fantasies about absconding from school and leaving the stress of exams behind abound."
+  },
+  {
    "date": "2026-10-12",
    "word": "nexus",
    "url": "https://www.merriam-webster.com/word-of-the-day/nexus-2026-10-12",
@@ -236,5 +245,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-12T16:14+05:30"
+ "updatedAt": "2026-10-13T12:15+05:30"
 }
