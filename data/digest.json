@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-14",
+   "word": "deportment",
+   "url": "https://www.merriam-webster.com/word-of-the-day/deportment-2026-10-14",
+   "pronunciation": "dih-PORT-munt",
+   "pos": "noun",
+   "definition": "the way in which one conducts one oneself",
+   "example": "The new students were instructed in proper dress and deportment ."
+  },
+  {
    "date": "2026-10-13",
    "word": "abscond",
    "url": "https://www.merriam-webster.com/word-of-the-day/abscond-2026-10-13",
@@ -245,5 +254,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-13T12:15+05:30"
+ "updatedAt": "2026-10-14T10:19+05:30"
 }
