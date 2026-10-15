@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-15",
+   "word": "outlandish",
+   "url": "https://www.merriam-webster.com/word-of-the-day/outlandish-2026-10-15",
+   "pronunciation": "out-LAN-dish",
+   "pos": "adjective",
+   "definition": "extremely different from what is normal or expected",
+   "example": "One of the author’s greatest strengths is her ability to write outlandish characters whose quirks remain lodged in readers’ minds long after they’ve finished the book."
+  },
+  {
    "date": "2026-10-14",
    "word": "deportment",
    "url": "https://www.merriam-webster.com/word-of-the-day/deportment-2026-10-14",
@@ -254,5 +263,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-14T22:38+05:30"
+ "updatedAt": "2026-10-15T10:04+05:30"
 }
