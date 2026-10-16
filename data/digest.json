@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-16",
+   "word": "zenith",
+   "url": "https://www.merriam-webster.com/word-of-the-day/zenith-2026-10-16",
+   "pronunciation": "ZEE-nith",
+   "pos": "noun",
+   "definition": "the strongest or most successful period of time for something",
+   "example": "At its zenith in the 1980s, the company employed more than 300 people."
+  },
+  {
    "date": "2026-10-15",
    "word": "outlandish",
    "url": "https://www.merriam-webster.com/word-of-the-day/outlandish-2026-10-15",
@@ -263,5 +272,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-15T10:04+05:30"
+ "updatedAt": "2026-10-16T09:58+05:30"
 }
