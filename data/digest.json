@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-17",
+   "word": "syncretic",
+   "url": "https://www.merriam-webster.com/word-of-the-day/syncretic-2026-10-17",
+   "pronunciation": "sin-KRET-ik",
+   "pos": "adjective",
+   "definition": "involving different forms of belief or practice",
+   "example": "We were raised with a syncretic religion that combined practices from various faiths."
+  },
+  {
    "date": "2026-10-16",
    "word": "zenith",
    "url": "https://www.merriam-webster.com/word-of-the-day/zenith-2026-10-16",
@@ -272,5 +281,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-16T09:58+05:30"
+ "updatedAt": "2026-10-17T09:52+05:30"
 }
