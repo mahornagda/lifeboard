@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-18",
+   "word": "bon vivant",
+   "url": "https://www.merriam-webster.com/word-of-the-day/bon-vivant-2026-10-18",
+   "pronunciation": "bahn-vee-VAHNT",
+   "pos": "noun",
+   "definition": "a sociable person who likes fancy food and drink",
+   "example": "She has become something of a bon vivant since moving to Paris, going out most nights and delighting in the city's many restaurants."
+  },
+  {
    "date": "2026-10-17",
    "word": "syncretic",
    "url": "https://www.merriam-webster.com/word-of-the-day/syncretic-2026-10-17",
@@ -281,5 +290,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-17T09:52+05:30"
+ "updatedAt": "2026-10-18T09:58+05:30"
 }
