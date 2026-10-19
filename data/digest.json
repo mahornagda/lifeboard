@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-19",
+   "word": "fervid",
+   "url": "https://www.merriam-webster.com/word-of-the-day/fervid-2026-10-19",
+   "pronunciation": "FER-vid",
+   "pos": "adjective",
+   "definition": "having or expressing intense feeling",
+   "example": "The core of the book is the fervid letters the friends exchanged during the years they were apart."
+  },
+  {
    "date": "2026-10-18",
    "word": "bon vivant",
    "url": "https://www.merriam-webster.com/word-of-the-day/bon-vivant-2026-10-18",
@@ -290,5 +299,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-18T09:58+05:30"
+ "updatedAt": "2026-10-19T10:06+05:30"
 }
