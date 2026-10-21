@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-21",
+   "word": "jilt",
+   "url": "https://www.merriam-webster.com/word-of-the-day/jilt-2026-10-21",
+   "pronunciation": "JILT",
+   "pos": "verb",
+   "definition": "to abruptly end a romantic relationship with someone",
+   "example": "The novel begins with the hero, having just been jilted by his fiancée, setting off to hike the Appalachian Trail."
+  },
+  {
    "date": "2026-10-20",
    "word": "compunction",
    "url": "https://www.merriam-webster.com/word-of-the-day/compunction-2026-10-20",
@@ -308,5 +317,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-20T13:58+05:30"
+ "updatedAt": "2026-10-21T10:12+05:30"
 }
