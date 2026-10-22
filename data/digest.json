@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-22",
+   "word": "vocation",
+   "url": "https://www.merriam-webster.com/word-of-the-day/vocation-2026-10-22",
+   "pronunciation": "voh-KAY-shun",
+   "pos": "noun",
+   "definition": "an occupation, or a calling to do a certain kind of work",
+   "example": "Since he was a teenager, he knew that he would find his vocation in marine biology."
+  },
+  {
    "date": "2026-10-21",
    "word": "jilt",
    "url": "https://www.merriam-webster.com/word-of-the-day/jilt-2026-10-21",
@@ -317,5 +326,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-21T10:12+05:30"
+ "updatedAt": "2026-10-22T10:10+05:30"
 }
