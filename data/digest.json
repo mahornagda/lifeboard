@@ -1,6 +1,13 @@
 {
  "rbi": [
   {
+   "id": 63858,
+   "title": "RBI issues Reserve Bank of India (Commercial Banks – Forthcoming Instructions) Second Amendment Directions, 2026 on Minimum Capital Requirements for Operational Risk",
+   "date": "2026-10-23",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63858",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR13805D68475ED8C24E62BB01BB5C51E71C8C.PDF"
+  },
+  {
    "id": 63750,
    "title": "RBI issues Amendment Directions on 'Standardised Approach for Counterparty Credit Risk (SA-CCR)’",
    "date": "2026-10-07",
@@ -335,5 +342,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-23T10:15+05:30"
+ "updatedAt": "2026-10-23T22:34+05:30"
 }
