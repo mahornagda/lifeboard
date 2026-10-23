@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-23",
+   "word": "asunder",
+   "url": "https://www.merriam-webster.com/word-of-the-day/asunder-2026-10-23",
+   "pronunciation": "uh-SUN-der",
+   "pos": "adverb or adjective",
+   "definition": "into parts",
+   "example": "The park was torn asunder by yesterday's microburst, and many of its trails have been blocked by fallen trees."
+  },
+  {
    "date": "2026-10-22",
    "word": "vocation",
    "url": "https://www.merriam-webster.com/word-of-the-day/vocation-2026-10-22",
@@ -326,5 +335,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-22T10:10+05:30"
+ "updatedAt": "2026-10-23T10:15+05:30"
 }
