@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-24",
+   "word": "puissant",
+   "url": "https://www.merriam-webster.com/word-of-the-day/puissant-2026-10-24",
+   "pronunciation": "PWISS-unt",
+   "pos": "adjective",
+   "definition": "powerful",
+   "example": "The creatures in her fantasy novel are wielders of puissant magic, able to strike down enemies by harnessing the power of weather phenomena like lightning and tornadoes."
+  },
+  {
    "date": "2026-10-23",
    "word": "asunder",
    "url": "https://www.merriam-webster.com/word-of-the-day/asunder-2026-10-23",
@@ -342,5 +351,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-23T22:34+05:30"
+ "updatedAt": "2026-10-24T10:02+05:30"
 }
