@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-25",
+   "word": "emissary",
+   "url": "https://www.merriam-webster.com/word-of-the-day/emissary-2026-10-25",
+   "pronunciation": "EM-uh-sair-ee",
+   "pos": "noun",
+   "definition": "a person sent to represent another person or organization",
+   "example": "Emissaries from the government are trying to negotiate a settlement."
+  },
+  {
    "date": "2026-10-24",
    "word": "puissant",
    "url": "https://www.merriam-webster.com/word-of-the-day/puissant-2026-10-24",
@@ -351,5 +360,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-24T10:02+05:30"
+ "updatedAt": "2026-10-25T10:07+05:30"
 }
