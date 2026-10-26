@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-26",
+   "word": "disparate",
+   "url": "https://www.merriam-webster.com/word-of-the-day/disparate-2026-10-26",
+   "pronunciation": "DISS-puh-rut",
+   "pos": "adjective",
+   "definition": "different from each other",
+   "example": "The orchestral project joins disparate musical elements to create a truly original sound."
+  },
+  {
    "date": "2026-10-25",
    "word": "emissary",
    "url": "https://www.merriam-webster.com/word-of-the-day/emissary-2026-10-25",
@@ -360,5 +369,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-25T10:07+05:30"
+ "updatedAt": "2026-10-26T10:12+05:30"
 }
