@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-27",
+   "word": "milieu",
+   "url": "https://www.merriam-webster.com/word-of-the-day/milieu-2026-10-27",
+   "pronunciation": "meel-YOO",
+   "pos": "noun",
+   "definition": "the setting in which people live or in which something occurs",
+   "example": "Langston Hughes, Zora Neale Hurston, and Jean Toomer were among the many writers who flourished in the intellectual milieu of the Harlem Renaissance."
+  },
+  {
    "date": "2026-10-26",
    "word": "disparate",
    "url": "https://www.merriam-webster.com/word-of-the-day/disparate-2026-10-26",
@@ -369,5 +378,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-26T10:12+05:30"
+ "updatedAt": "2026-10-27T14:26+05:30"
 }
