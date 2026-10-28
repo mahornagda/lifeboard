@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-28",
+   "word": "grotesque",
+   "url": "https://www.merriam-webster.com/word-of-the-day/grotesque-2026-10-28",
+   "pronunciation": "groh-TESK",
+   "pos": "adjective",
+   "definition": "very strange or ugly in a way that is not normal or natural",
+   "example": "She opted for a scary Halloween costume, complete with a grotesque monster mask."
+  },
+  {
    "date": "2026-10-27",
    "word": "milieu",
    "url": "https://www.merriam-webster.com/word-of-the-day/milieu-2026-10-27",
@@ -378,5 +387,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-27T14:26+05:30"
+ "updatedAt": "2026-10-28T11:08+05:30"
 }
