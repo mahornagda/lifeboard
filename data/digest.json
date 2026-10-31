@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-10-31",
+   "word": "wraith",
+   "url": "https://www.merriam-webster.com/word-of-the-day/wraith-2026-10-31",
+   "pronunciation": "RAYTH",
+   "pos": "noun",
+   "definition": "the spirit of a dead person",
+   "example": "The most frightening scene from the movie featured a vengeful wraith creeping slowly up behind the main characters."
+  },
+  {
    "date": "2026-10-30",
    "word": "reticent",
    "url": "https://www.merriam-webster.com/word-of-the-day/reticent-2026-10-30",
@@ -405,5 +414,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-30T15:27+05:30"
+ "updatedAt": "2026-10-31T11:06+05:30"
 }
