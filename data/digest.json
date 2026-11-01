@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-01",
+   "word": "Pyrrhic",
+   "url": "https://www.merriam-webster.com/word-of-the-day/pyrrhic-2026-11-01",
+   "pronunciation": "PEER-ik",
+   "pos": "adjective",
+   "definition": "achieved at excessive cost",
+   "example": "The basketball team’s comeback in the final minutes turned out to be a Pyrrhic victory as the star center injured her ankle."
+  },
+  {
    "date": "2026-10-31",
    "word": "wraith",
    "url": "https://www.merriam-webster.com/word-of-the-day/wraith-2026-10-31",
@@ -414,5 +423,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-10-31T11:06+05:30"
+ "updatedAt": "2026-11-01T11:28+05:30"
 }
