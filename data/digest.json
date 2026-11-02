@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-02",
+   "word": "satiate",
+   "url": "https://www.merriam-webster.com/word-of-the-day/satiate-2026-11-02",
+   "pronunciation": "SAY-shee-ayt",
+   "pos": "verb",
+   "definition": "to satisfy (a need, desire, etc.) fully",
+   "example": "The new restaurant’s menu promises to satiate diners’ cravings for comfort food, offering fresh spins on classic, time-honored fare."
+  },
+  {
    "date": "2026-11-01",
    "word": "Pyrrhic",
    "url": "https://www.merriam-webster.com/word-of-the-day/pyrrhic-2026-11-01",
@@ -423,5 +432,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-01T11:28+05:30"
+ "updatedAt": "2026-11-02T16:28+05:30"
 }
