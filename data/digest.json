@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-03",
+   "word": "candidate",
+   "url": "https://www.merriam-webster.com/word-of-the-day/candidate-2026-11-03",
+   "pronunciation": "KAN-duh-dayt",
+   "pos": "noun",
+   "definition": "someone aspiring to, or nominated or qualified for, an office",
+   "example": "The hiring team will select the best candidate for the job."
+  },
+  {
    "date": "2026-11-02",
    "word": "satiate",
    "url": "https://www.merriam-webster.com/word-of-the-day/satiate-2026-11-02",
@@ -432,5 +441,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-02T16:28+05:30"
+ "updatedAt": "2026-11-03T12:13+05:30"
 }
