@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-05",
+   "word": "effrontery",
+   "url": "https://www.merriam-webster.com/word-of-the-day/effrontery-2026-11-05",
+   "pronunciation": "ih-FRUN-tuh-ree",
+   "pos": "noun",
+   "definition": "bold shamelessness",
+   "example": "Holly could not believe the sheer effrontery of the student who asked that her grade be changed even though she had completed little of the coursework."
+  },
+  {
    "date": "2026-11-04",
    "word": "fulsome",
    "url": "https://www.merriam-webster.com/word-of-the-day/fulsome-2026-11-04",
@@ -450,5 +459,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-04T11:43+05:30"
+ "updatedAt": "2026-11-05T12:10+05:30"
 }
