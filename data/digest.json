@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-06",
+   "word": "quondam",
+   "url": "https://www.merriam-webster.com/word-of-the-day/quondam-2026-11-06",
+   "pronunciation": "KWAHN-dum",
+   "pos": "adjective",
+   "definition": "former or sometime",
+   "example": "Many people were surprised to learn that the quondam professor has since become a dancer."
+  },
+  {
    "date": "2026-11-05",
    "word": "effrontery",
    "url": "https://www.merriam-webster.com/word-of-the-day/effrontery-2026-11-05",
@@ -459,5 +468,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-05T12:10+05:30"
+ "updatedAt": "2026-11-06T12:08+05:30"
 }
