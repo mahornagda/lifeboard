@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-07",
+   "word": "abandon",
+   "url": "https://www.merriam-webster.com/word-of-the-day/abandon-2026-11-07",
+   "pronunciation": "uh-BAN-dun",
+   "pos": "noun",
+   "definition": "a feeling or attitude of wild or complete freedom",
+   "example": "The two friends spent the work week looking forward to hitting the clubs together on Friday night and dancing with total abandon ."
+  },
+  {
    "date": "2026-11-06",
    "word": "quondam",
    "url": "https://www.merriam-webster.com/word-of-the-day/quondam-2026-11-06",
@@ -468,5 +477,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-06T12:08+05:30"
+ "updatedAt": "2026-11-07T11:24+05:30"
 }
