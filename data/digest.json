@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-08",
+   "word": "cockamamie",
+   "url": "https://www.merriam-webster.com/word-of-the-day/cockamamie-2026-11-08",
+   "pronunciation": "kah-kuh-MAY-mee",
+   "pos": "adjective",
+   "definition": "ridiculous or silly",
+   "example": "Instead of being honest, he came up with a cockamamie excuse about why he didn’t turn in his assignment."
+  },
+  {
    "date": "2026-11-07",
    "word": "abandon",
    "url": "https://www.merriam-webster.com/word-of-the-day/abandon-2026-11-07",
@@ -477,5 +486,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-07T11:24+05:30"
+ "updatedAt": "2026-11-08T15:46+05:30"
 }
