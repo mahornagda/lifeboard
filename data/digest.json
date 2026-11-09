@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-09",
+   "word": "wabi-sabi",
+   "url": "https://www.merriam-webster.com/word-of-the-day/wabi-sabi-2026-11-09",
+   "pronunciation": "WAH-bee-SAH-bee",
+   "pos": "noun",
+   "definition": "a philosophy emphasizing the value of imperfection",
+   "example": "Over the years, the gardener learned to let go of his perfectionism and embrace wabi-sabi ."
+  },
+  {
    "date": "2026-11-08",
    "word": "cockamamie",
    "url": "https://www.merriam-webster.com/word-of-the-day/cockamamie-2026-11-08",
@@ -486,5 +495,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-08T15:46+05:30"
+ "updatedAt": "2026-11-09T11:50+05:30"
 }
