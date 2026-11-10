@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-10",
+   "word": "defer",
+   "url": "https://www.merriam-webster.com/word-of-the-day/defer-2026-11-10",
+   "pronunciation": "dih-FER",
+   "pos": "verb",
+   "definition": "to put off or delay",
+   "example": "We decided to defer the offer so that we could explore other options."
+  },
+  {
    "date": "2026-11-09",
    "word": "wabi-sabi",
    "url": "https://www.merriam-webster.com/word-of-the-day/wabi-sabi-2026-11-09",
@@ -495,5 +504,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-09T11:50+05:30"
+ "updatedAt": "2026-11-10T20:19+05:30"
 }
