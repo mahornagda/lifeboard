@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-11",
+   "word": "valorous",
+   "url": "https://www.merriam-webster.com/word-of-the-day/valorous-2026-11-11",
+   "pronunciation": "VAL-uh-russ",
+   "pos": "adjective",
+   "definition": "courageous or brave",
+   "example": "For carrying three wounded members of his squadron out of harm's way, the lieutenant was presented with an award that recognized his valorous actions in the heat of battle."
+  },
+  {
    "date": "2026-11-10",
    "word": "defer",
    "url": "https://www.merriam-webster.com/word-of-the-day/defer-2026-11-10",
@@ -497,5 +506,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-11T02:46+05:30"
+ "updatedAt": "2026-11-11T11:40+05:30"
 }
