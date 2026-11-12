@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-12",
+   "word": "gauntlet",
+   "url": "https://www.merriam-webster.com/word-of-the-day/gauntlet-2026-11-12",
+   "pronunciation": "GAWNT-lut",
+   "pos": "noun",
+   "definition": "a series of challenges amounting to an ordeal",
+   "example": "Salmon returning to their spawning grounds must make it past a gauntlet of predators, from eagles to otters to bears."
+  },
+  {
    "date": "2026-11-11",
    "word": "valorous",
    "url": "https://www.merriam-webster.com/word-of-the-day/valorous-2026-11-11",
@@ -506,5 +515,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-11T11:40+05:30"
+ "updatedAt": "2026-11-12T12:36+05:30"
 }
