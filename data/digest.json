@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-13",
+   "word": "impertinent",
+   "url": "https://www.merriam-webster.com/word-of-the-day/impertinent-2026-11-13",
+   "pronunciation": "im-PER-tuh-nunt",
+   "pos": "adjective",
+   "definition": "rude and showing a lack of respect",
+   "example": "The band stopped doing interviews after years of journalists asking invasive and impertinent questions."
+  },
+  {
    "date": "2026-11-12",
    "word": "gauntlet",
    "url": "https://www.merriam-webster.com/word-of-the-day/gauntlet-2026-11-12",
@@ -515,5 +524,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-12T12:36+05:30"
+ "updatedAt": "2026-11-13T12:09+05:30"
 }
