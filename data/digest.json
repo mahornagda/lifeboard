@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-14",
+   "word": "boilerplate",
+   "url": "https://www.merriam-webster.com/word-of-the-day/boilerplate-2026-11-14",
+   "pronunciation": "BOY-ler-playt",
+   "pos": "noun",
+   "definition": "standardized text or formulaic language",
+   "example": "The last paragraph of the contract was legal boilerplate ."
+  },
+  {
    "date": "2026-11-13",
    "word": "impertinent",
    "url": "https://www.merriam-webster.com/word-of-the-day/impertinent-2026-11-13",
@@ -524,5 +533,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-13T12:09+05:30"
+ "updatedAt": "2026-11-14T11:46+05:30"
 }
