@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-16",
+   "word": "travesty",
+   "url": "https://www.merriam-webster.com/word-of-the-day/travesty-2026-11-16",
+   "pronunciation": "TRAV-uh-stee",
+   "pos": "noun",
+   "definition": "a distorted or badly inferior imitation",
+   "example": "The investigation into the causes of the accident was a complete travesty ."
+  },
+  {
    "date": "2026-11-15",
    "word": "lissome",
    "url": "https://www.merriam-webster.com/word-of-the-day/lissome-2026-11-15",
@@ -542,5 +551,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-15T11:53+05:30"
+ "updatedAt": "2026-11-16T11:52+05:30"
 }
