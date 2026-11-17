@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-17",
+   "word": "stolid",
+   "url": "https://www.merriam-webster.com/word-of-the-day/stolid-2026-11-17",
+   "pronunciation": "STAH-lid",
+   "pos": "adjective",
+   "definition": "expressing little or no emotion",
+   "example": "The detective presented the facts of the case with stolid indifference."
+  },
+  {
    "date": "2026-11-16",
    "word": "travesty",
    "url": "https://www.merriam-webster.com/word-of-the-day/travesty-2026-11-16",
@@ -551,5 +560,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-16T11:52+05:30"
+ "updatedAt": "2026-11-17T21:26+05:30"
 }
