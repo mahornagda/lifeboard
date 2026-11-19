@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-19",
+   "word": "upbraid",
+   "url": "https://www.merriam-webster.com/word-of-the-day/upbraid-2026-11-19",
+   "pronunciation": "up-BRAYD",
+   "pos": "verb",
+   "definition": "to scold someone who has done something wrong",
+   "example": "The teacher upbraided the class after discovering the chalkboard erasers had been clapped all over the walls."
+  },
+  {
    "date": "2026-11-18",
    "word": "hobbyhorse",
    "url": "https://www.merriam-webster.com/word-of-the-day/hobbyhorse-2026-11-18",
@@ -569,5 +578,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-18T17:05+05:30"
+ "updatedAt": "2026-11-19T17:03+05:30"
 }
