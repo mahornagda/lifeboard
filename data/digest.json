@@ -38,6 +38,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-20",
+   "word": "ruthless",
+   "url": "https://www.merriam-webster.com/word-of-the-day/ruthless-2026-11-20",
+   "pronunciation": "ROOTH-lus",
+   "pos": "adjective",
+   "definition": "having no pity",
+   "example": "Wolves and other large carnivores are often portrayed (and feared) as ruthless predators even as they play vital roles in their ecosystems."
+  },
+  {
    "date": "2026-11-19",
    "word": "upbraid",
    "url": "https://www.merriam-webster.com/word-of-the-day/upbraid-2026-11-19",
@@ -578,5 +587,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-19T17:03+05:30"
+ "updatedAt": "2026-11-20T17:01+05:30"
 }
