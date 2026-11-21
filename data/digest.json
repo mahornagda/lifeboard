@@ -31,6 +31,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-21",
+   "word": "meet-cute",
+   "url": "https://www.merriam-webster.com/word-of-the-day/meet-cute-2026-11-21",
+   "pronunciation": "MEET-kyoot",
+   "pos": "noun",
+   "definition": "a cute or charming first encounter between romantic partners",
+   "example": "Their meet-cute felt as if it came straight out of a romantic comedy."
+  },
+  {
    "date": "2026-11-20",
    "word": "ruthless",
    "url": "https://www.merriam-webster.com/word-of-the-day/ruthless-2026-11-20",
@@ -580,5 +589,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-21T01:41+05:30"
+ "updatedAt": "2026-11-21T16:27+05:30"
 }
