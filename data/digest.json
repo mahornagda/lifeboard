@@ -31,6 +31,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-22",
+   "word": "copacetic",
+   "url": "https://www.merriam-webster.com/word-of-the-day/copacetic-2026-11-22",
+   "pronunciation": "koh-puh-SET-ik",
+   "pos": "adjective",
+   "definition": "very satisfactory",
+   "example": "Worry not: I assure you that everything’s copacetic ."
+  },
+  {
    "date": "2026-11-21",
    "word": "meet-cute",
    "url": "https://www.merriam-webster.com/word-of-the-day/meet-cute-2026-11-21",
@@ -589,5 +598,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-21T16:27+05:30"
+ "updatedAt": "2026-11-22T16:46+05:30"
 }
