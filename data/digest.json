@@ -1,6 +1,20 @@
 {
  "rbi": [
   {
+   "id": 64028,
+   "title": "Reserve Bank (Securitisation Transactions) Amendment Directions, 2026",
+   "date": "2026-11-23",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=64028",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR1550828E203BA4C74AA7AF85F02B5E9E8618.PDF"
+  },
+  {
+   "id": 64026,
+   "title": "RBI issues Draft Amendment Directions for ‘Preventive Safeguards for Electronic Banking Transactions (EBTs)’",
+   "date": "2026-11-23",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=64026",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR15481A16A331A8154221B1B3889AD4D0008D.PDF"
+  },
+  {
    "id": 63858,
    "title": "RBI issues Reserve Bank of India (Commercial Banks – Forthcoming Instructions) Second Amendment Directions, 2026 on Minimum Capital Requirements for Operational Risk",
    "date": "2026-10-23",
@@ -30,6 +44,15 @@
   }
  ],
  "words": [
+  {
+   "date": "2026-11-23",
+   "word": "optimization",
+   "url": "https://www.merriam-webster.com/word-of-the-day/optimization-2026-11-23",
+   "pronunciation": "ahp-tuh-muh-ZAY-shun",
+   "pos": "noun",
+   "definition": "the act of making something as good or effective as possible",
+   "example": "She traded in her old phone for a newer model that offered improved battery optimization and better camera performance."
+  },
   {
    "date": "2026-11-22",
    "word": "copacetic",
@@ -598,5 +621,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-22T16:46+05:30"
+ "updatedAt": "2026-11-23T17:58+05:30"
 }
