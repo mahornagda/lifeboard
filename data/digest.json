@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-24",
+   "word": "dubious",
+   "url": "https://www.merriam-webster.com/word-of-the-day/dubious-2026-11-24",
+   "pronunciation": "DOO-bee-us",
+   "pos": "adjective",
+   "definition": "feeling doubt about something",
+   "example": "Despite having some late-season success, we were dubious about the likelihood of our team making the playoffs."
+  },
+  {
    "date": "2026-11-23",
    "word": "optimization",
    "url": "https://www.merriam-webster.com/word-of-the-day/optimization-2026-11-23",
@@ -621,5 +630,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-23T17:58+05:30"
+ "updatedAt": "2026-11-24T19:08+05:30"
 }
