@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-25",
+   "word": "arbiter",
+   "url": "https://www.merriam-webster.com/word-of-the-day/arbiter-2026-11-25",
+   "pronunciation": "AHR-buh-ter",
+   "pos": "noun",
+   "definition": "a person with power to decide a dispute",
+   "example": "The mayor will act as the final arbiter in any disputes between board members."
+  },
+  {
    "date": "2026-11-24",
    "word": "dubious",
    "url": "https://www.merriam-webster.com/word-of-the-day/dubious-2026-11-24",
@@ -630,5 +639,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-24T19:08+05:30"
+ "updatedAt": "2026-11-25T13:56+05:30"
 }
