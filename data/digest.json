@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-26",
+   "word": "felicitous",
+   "url": "https://www.merriam-webster.com/word-of-the-day/felicitous-2026-11-26",
+   "pronunciation": "fih-LISS-uh-tus",
+   "pos": "adjective",
+   "definition": "very well expressed or suited for some purpose or situation",
+   "example": "She had not been asked ahead of time to speak at the event, but she managed some felicitous remarks nonetheless."
+  },
+  {
    "date": "2026-11-25",
    "word": "arbiter",
    "url": "https://www.merriam-webster.com/word-of-the-day/arbiter-2026-11-25",
@@ -639,5 +648,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-25T13:56+05:30"
+ "updatedAt": "2026-11-26T22:20+05:30"
 }
