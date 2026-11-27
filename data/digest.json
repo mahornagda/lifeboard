@@ -45,6 +45,15 @@
  ],
  "words": [
   {
+   "date": "2026-11-27",
+   "word": "injunction",
+   "url": "https://www.merriam-webster.com/word-of-the-day/injunction-2026-11-27",
+   "pronunciation": "in-JUNK-shun",
+   "pos": "noun",
+   "definition": "a court order to do or not do something",
+   "example": "We requested an injunction with hopes of preserving the historic landmark."
+  },
+  {
    "date": "2026-11-26",
    "word": "felicitous",
    "url": "https://www.merriam-webster.com/word-of-the-day/felicitous-2026-11-26",
@@ -648,5 +657,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-26T22:20+05:30"
+ "updatedAt": "2026-11-27T17:40+05:30"
 }
