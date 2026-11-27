@@ -1,6 +1,13 @@
 {
  "rbi": [
   {
+   "id": 64062,
+   "title": "RBI Issues Amendment Directions on ‘Suspected Money Mule Accounts to Prevent Cyber-enabled Financial Frauds’",
+   "date": "2026-11-27",
+   "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=64062",
+   "pdf": "https://rbidocs.rbi.org.in/rdocs/PressRelease/PDFs/PR158441DB179AB5824577A7871B75C32B0702.PDF"
+  },
+  {
    "id": 64028,
    "title": "Reserve Bank (Securitisation Transactions) Amendment Directions, 2026",
    "date": "2026-11-23",
@@ -657,5 +664,5 @@
    "example": "The elegiac tone of the singer’s first album always leaves me in tears."
   }
  ],
- "updatedAt": "2026-11-27T17:40+05:30"
+ "updatedAt": "2026-11-28T02:44+05:30"
 }
